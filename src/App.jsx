@@ -1,7 +1,9 @@
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <></>;
+  return (
+    <>
+      <h1>hello</h1>
+    </>
+  );
 }
 
 export default App;
