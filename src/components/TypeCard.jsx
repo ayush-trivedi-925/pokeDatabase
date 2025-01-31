@@ -1,15 +1,15 @@
 import { pokemonTypeColors } from "../utils";
 
-export default function TypeCard({ type }) {
+export default function TypeCard({ name }) {
   return (
     <div
       className="type-tile"
       style={{
-        color: pokemonTypeColors?.[type]?.color,
-        backgroundColor: pokemonTypeColors?.[type]?.background,
+        color: pokemonTypeColors?.[name]?.color,
+        backgroundColor: pokemonTypeColors?.[name]?.background,
       }}
     >
-      <p>{type}</p>
+      <p>{name}</p>
     </div>
   );
 }
