@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { first151Pokemon, getFullPokedexNumber } from "../utils";
-export default function SideNav({ selectedPokemon, setSelectedPokemon }) {
+import { FaLongArrowAltLeft } from "react-icons/fa";
+export default function SideNav({
+  selectedPokemon,
+  setSelectedPokemon,
+  handleToggleMenu,
+  showSideMenu,
+}) {
   const [searchValue, setSearchValue] = useState("");
   const filteredPokemon = first151Pokemon.filter((ele, eleIdx) => {
     // if eleIdx includes the current search value, return true
@@ -15,8 +21,11 @@ export default function SideNav({ selectedPokemon, setSelectedPokemon }) {
     return false;
   });
   return (
-    <nav>
-      <div>
+    <nav className={" " + (!showSideMenu ? "open" : "")}>
+      <div className={"header" + (!showSideMenu ? "open" : "")}>
+        <button onClick={handleToggleMenu} className="open-nav-button">
+          <FaLongArrowAltLeft />
+        </button>
         <h1 className="text-gradient">PokeDatabase</h1>
       </div>
       <input
